@@ -1,3 +1,41 @@
 // Place all the styles related to the search controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.container {
+  text-align: center;
+}
+
+.title {
+  text-align: center;
+  margin-top: 18%;
+  padding-bottom: 5%;
+  border-bottom: 2px solid black;
+}
+
+.search-params {
+  padding-top: 2%;
+  text-align: center;
+  padding-bottom: 5%;
+  border-bottom: 2px solid black;
+  margin-bottom: 5%;
+}
+
+.search-option {
+  margin-bottom: 3%;
+}
+
+.find-jobs-button {
+  bottom: 10px;
+  left: 45%;
+  background-color: #8064A2;
+}
+
+#company-search {
+  width: 25%;
+  margin: 0 auto;
+}
+
+#company-search-button {
+  left: -3%;
+}

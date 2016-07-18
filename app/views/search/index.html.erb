@@ -1,1 +1,31 @@
-"hi"
+<div class = "container">
+  <div class = "title">
+    <h1> Welcome to The Muse Job Search Engine </h1>
+    <h3> Please choose your search parameters below </h3>
+  </div>
+
+  <div class= "search-params col-md-12">
+    <div class= "search-option col-md-3">
+      <h3><a href= "#">COMPANY</a></h3>
+    </div>
+
+    <div class= "search-option col-md-3">
+      <h3><a href= "#">LEVEL</a></h3>
+    </div>
+
+    <div class= "search-option col-md-3">
+      <h3><a href= "#">CATEGORY</a></h3>
+    </div>
+
+    <div class= "search-option col-md-3">
+      <h3><a href= "#">LOCATION</a></h3>
+    </div>
+
+    <%= form_for :search do |f| %>
+      <%= render partial: 'company', locals: {f: f} %>
+      <%= render partial: 'level', locals: {f: f} %>
+    <% end %>
+  </div>
+
+    <button type="submit" class="find-jobs-button btn btn-default">Find Jobs!</button>
+</div>
