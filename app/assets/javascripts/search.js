@@ -1,5 +1,5 @@
 $(document).ready(function(){
-  $( function() {
+  $(function() {
     var availableTags = [
       "ActionScript",
       "AppleScript",
@@ -24,11 +24,8 @@ $(document).ready(function(){
       "Scala",
       "Scheme"
     ];
-    $("#company-search-form").autocomplete({
-      source: availableTags
+    $("#company-search-form").on("click", function(e){
+      $('#company-search-form').autocomplete({source: availableTags});
     });
-  });
-  $("#company-search-form").on("click", "input", function(e){
-    console.log("hi");
   })
 });
