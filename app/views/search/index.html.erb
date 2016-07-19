@@ -21,13 +21,18 @@
       <h3><a id= "location" class= "search-option" href= "#">LOCATION</a></h3>
     </div>
 
-      <%= render partial: 'company'%>
-      <%= render partial: 'location' %>
+
+  <div id = "form-div">
+
+    <%= render partial: 'company'%>
+    <%= render partial: 'location' %>
 
     <%= bootstrap_form_for :search, url: {action: "show", controller: "search"} do |f| %>
       <%= render partial: 'level', locals: {f: f} %>
       <%= render partial: 'category', locals: {f: f} %>
   </div>
+
       <%= f.submit "Find Jobs!", class:"find-jobs-button btn btn-default" %>
     <% end %>
+  </div>
 </div>

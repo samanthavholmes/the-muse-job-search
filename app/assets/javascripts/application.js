@@ -14,5 +14,6 @@
 //= require jquery_ujs
 //= require jquery-ui
 //= require bootstrap-sprockets
+//= require bootstrap-tokenfield
 //= require_tree .
 
