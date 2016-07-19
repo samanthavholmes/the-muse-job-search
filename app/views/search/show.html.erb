@@ -1,1 +1,16 @@
-<%= results %>
+<% results.each do |job_listing| %>
+  <h1><a href= <%= url_for_full_listing(job_listing) %>><%= company_name(job_listing) %></a></h1>
+  <h2><%= job_title(job_listing) %>
+  <h5> <%= listing_date(job_listing) %></h5>
+  <% levels(job_listing).each do |level| %>
+    <h4> <%= level %> </h4>
+  <% end %>
+  <% categories(job_listing).each do |category| %>
+    <h4> <%= category %> </h4>
+  <% end %>
+  <% locations(job_listing).each do |location| %>
+    <h4> <%= location %> </h4>
+  <% end %>
+  <h5><%= job_description(job_listing) %></h5>
+
+<% end %>
