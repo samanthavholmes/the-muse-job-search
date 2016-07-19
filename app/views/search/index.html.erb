@@ -5,25 +5,27 @@
   </div>
 
   <div class= "search-params col-md-12">
-    <div class= "search-option col-md-3">
-      <h3><a href= "#">COMPANY</a></h3>
+    <div class= "col-md-3">
+      <h3><a id="company" class= "search-option" href= "#">COMPANY</a></h3>
     </div>
 
-    <div class= "search-option col-md-3">
-      <h3><a href= "#">LEVEL</a></h3>
+    <div class= "col-md-3">
+      <h3><a id="level" class= "search-option" href= "#">LEVEL</a></h3>
     </div>
 
-    <div class= "search-option col-md-3">
-      <h3><a href= "#">CATEGORY</a></h3>
+    <div class= "col-md-3">
+      <h3><a id= "category" class= "search-option" href= "#">CATEGORY</a></h3>
     </div>
 
-    <div class= "search-option col-md-3">
-      <h3><a href= "#">LOCATION</a></h3>
+    <div class= "col-md-3">
+      <h3><a id= "location" class= "search-option" href= "#">LOCATION</a></h3>
     </div>
 
-    <%= form_for :search do |f| %>
+    <%= bootstrap_form_for :search do |f| %>
       <%= render partial: 'company', locals: {f: f} %>
       <%= render partial: 'level', locals: {f: f} %>
+      <%= render partial: 'category', locals: {f: f} %>
+      <%= render partial: 'location', locals: {f: f} %>
     <% end %>
   </div>
 
