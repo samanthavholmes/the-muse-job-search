@@ -12,5 +12,8 @@
     <h4> <%= location %> </h4>
   <% end %>
   <h5><%= job_description(job_listing) %></h5>
+<% end %>
 
+<%= bootstrap_form_for :search, url: {action: "show", controller: "search"} do |f| %>
+  <%= f.submit "NEXT", class:"next-button btn btn-default" %>
 <% end %>
