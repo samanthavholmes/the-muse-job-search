@@ -12,7 +12,6 @@ module SearchSupporter
         session[:url] += company_query
       end
       if params[:levels]
-        binding.pry
         levels = params[:levels].map! {|c| c.gsub(" ", "+")}.join("&level=")
         level_query = "&level=" + levels
         session[:query] = true
