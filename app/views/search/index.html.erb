@@ -22,17 +22,17 @@
     </div>
 
 
-  <div id = "form-div">
-
-    <%= render partial: 'company'%>
-    <%= render partial: 'location' %>
+  <div id="form-div">
+      <%= render partial: 'company'%>
+      <%= render partial: 'location' %>
 
     <%= bootstrap_form_for :search, url: {action: "show", controller: "search"} do |f| %>
       <%= render partial: 'level', locals: {f: f} %>
       <%= render partial: 'category', locals: {f: f} %>
   </div>
 
+  </div>
+
       <%= f.submit "Find Jobs!", class:"find-jobs-button btn btn-default" %>
     <% end %>
-  </div>
 </div>
