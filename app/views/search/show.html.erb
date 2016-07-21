@@ -1,19 +1,43 @@
-<% results.each do |job_listing| %>
-  <h1><a href= <%= url_for_full_listing(job_listing) %>><%= company_name(job_listing) %></a></h1>
-  <h2><%= job_title(job_listing) %>
-  <h5> <%= listing_date(job_listing) %></h5>
-  <% levels(job_listing).each do |level| %>
-    <h4> <%= level %> </h4>
-  <% end %>
-  <% categories(job_listing).each do |category| %>
-    <h4> <%= category %> </h4>
-  <% end %>
-  <% locations(job_listing).each do |location| %>
-    <h4> <%= location %> </h4>
-  <% end %>
-  <h5><%= job_description(job_listing) %></h5>
-<% end %>
+<div class = "container">
+  <div class= "col-md-12">
+    <% if !results.empty? %>
+      <h1> Job Listings </h1>
+      <% results.each do |job_listing| %>
+        <section class="panel panel-default col-md-6">
+          <header class="panel-heading">
+            <h3><a href= <%= url_for_full_listing(job_listing) %>><%= company_name(job_listing) %></a></h3>
+          </header>
+          <ul class="list-group">
+            <li class="list-group-item"><b>Post Date:</b> <%= listing_date(job_listing) %></li>
+            <li class="list-group-item"><b>Job Title:</b> <%= job_title(job_listing) %></li>
+            <% locations(job_listing).each do |location| %>
+              <li class="list-group-item"><b>Location:</b> <%= location %></li>
+            <% end %>
+              <% if !levels(job_listing).empty? %>
+            <li class="list-group-item">
+                <% levels(job_listing).each do |level| %>
+                  [<%= level %>]
+                <% end %>
+              <% end %>
+            </li>
+            <li class="list-group-item"><a class = "show-more" href= #>Show More</a></li>
+          </ul>
+          <div class="panel-body job-description hidden">
+            <h5><%= job_description(job_listing) %></h5>
+          </div>
+        </section>
+      <% end %>
+      <%= bootstrap_form_for :search, url: {action: "show", controller: "search"} do |f| %>
+          <%= f.submit "Next", class:"next-button btn btn-default" %>
+        <% end %>
+    <% else %>
+      <h1> Sorry, no job listings found with your search parameters. <h1>
+        <%= bootstrap_form_for :search, url: {action: "index", controller: "search"} do |f| %>
+          <%= f.submit "Back to Search", class:"back-button btn btn-default" %>
+        <% end %>
+    <% end %>
+  </div>
+</div>
 
-<%= bootstrap_form_for :search, url: {action: "show", controller: "search"} do |f| %>
-  <%= f.submit "NEXT", class:"next-button btn btn-default" %>
-<% end %>
+
+

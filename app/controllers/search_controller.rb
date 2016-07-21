@@ -12,7 +12,7 @@ class SearchController < ApplicationController
     if request.xhr?
       render :show, layout: false, locals: {results: results}
     else
-      render :show, layout: false, locals: {results: results}
+      render :show, locals: {results: results}
     end
   end
 end
