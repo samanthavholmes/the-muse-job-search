@@ -28,17 +28,16 @@
           </div>
         </section>
       <% end %>
-      <%= bootstrap_form_for :search, url: {action: "show", controller: "search"} do |f| %>
-          <%= f.submit "Previous", class:"previous-button btn btn-default" %>
+      <%= button_to "Previous", "/search" %>
+       <%= bootstrap_form_for :search, url: {action: "show", controller: "search"} do |f| %>
+          <%= f.submit "Previous", class:"nav-button previous-button btn btn-default" %>
         <% end %>
       <%= bootstrap_form_for :search, url: {action: "show", controller: "search"} do |f| %>
-          <%= f.submit "Next", class:"next-button btn btn-default" %>
+          <%= f.submit "Next", class:"nav-button next-button btn btn-default" %>
         <% end %>
     <% else %>
       <h1> Sorry, no job listings found with your search parameters. <h1>
-        <%= bootstrap_form_for :search, url: {action: "index", controller: "search"} do |f| %>
-          <%= f.submit "Back to Search", class:"back-button btn btn-default" %>
-        <% end %>
+        <%= link_to "Back To Search", root_path %>
     <% end %>
   </div>
 </div>

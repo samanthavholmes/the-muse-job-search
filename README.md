@@ -12,7 +12,7 @@ Technologies
 - jQuery/AJAX to enhance user experience
 - HTML5/CSS3
   - Bootstrap framework used to enhance design
-- RSpec testing
+- RSpec/Capybara for testing
 - JSON/Open-URI to open API
 
 TO-DO
@@ -21,3 +21,4 @@ TO-DO
 - Finish testing
 - Allow user to visit any page number
 - Work on design
+- See if any code can be refactored
