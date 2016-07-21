@@ -58,7 +58,7 @@ describe "SearchHelper" do
 
   describe "listing_date" do
     it "returns the listing date from the api results" do
-      expect(listing_date(job_listing)).to eq "2015-11-17T22:07:10.501307Z"
+      expect(listing_date(job_listing)).to eq "11/17/2015"
     end
   end
 end

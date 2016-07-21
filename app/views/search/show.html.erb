@@ -1,7 +1,7 @@
 <div class = "container">
   <div class= "col-md-12">
     <% if !results.empty? %>
-      <%= link_to "Back To Search", root_path %>
+      <span id = "back-button"><%= link_to "Back To Search", root_path %></span>
       <h1>Job Listings </h1>
       <% results.each do |job_listing| %>
         <section class="panel panel-default col-md-6 row-eq-height">
@@ -28,11 +28,10 @@
           </div>
         </section>
       <% end %>
-      <%= button_to "Previous", "/search" %>
        <%= bootstrap_form_for :search, url: {action: "show", controller: "search"} do |f| %>
+        <% if session[:page] != 0 %>
           <%= f.submit "Previous", class:"nav-button previous-button btn btn-default" %>
-        <% end %>
-      <%= bootstrap_form_for :search, url: {action: "show", controller: "search"} do |f| %>
+          <% end %>
           <%= f.submit "Next", class:"nav-button next-button btn btn-default" %>
         <% end %>
     <% else %>

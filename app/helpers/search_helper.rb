@@ -41,7 +41,7 @@ module SearchHelper
   end
 
   def listing_date(job_listing)
-    job_listing["publication_date"]
+    (job_listing["publication_date"].to_datetime).strftime("%m/%d/%Y")
   end
 
 end
