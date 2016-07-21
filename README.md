@@ -12,7 +12,7 @@ Technologies
 - jQuery/AJAX to enhance user experience
 - HTML5/CSS3
   - Bootstrap framework used to enhance design
-- RSpec/Capybara for testing
+- RSpec for testing
 - JSON/Open-URI to open API
 
 TO-DO

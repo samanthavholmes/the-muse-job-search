@@ -24,6 +24,7 @@ describe SearchController do
     context "the next button was hit" do
       it "increases the page number by 1" do
         session[:page] = 0
+        session[:query] = ""
         get :show, {commit: "Next"}
         expect(session[:page]).to be(1)
       end
@@ -32,6 +33,7 @@ describe SearchController do
     context "the previous button was hit" do
       it "decreases the page number by 1" do
         session[:page] = 2
+        session[:query] = ""
         get :show, {commit: "Previous"}
         expect(session[:page]).to be(1)
       end

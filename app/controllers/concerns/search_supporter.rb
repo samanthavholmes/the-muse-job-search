@@ -5,7 +5,6 @@ module SearchSupporter
   def get_url(options, query, page)
     if query == ""
       if options[:companies] && options[:companies] != [""]
-        bindingo.pry
         companies = options[:companies].map! {|c| c.gsub(" ", "+")}.join("&company=")
         company_query = "&company=" + companies
         query += company_query
