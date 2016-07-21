@@ -11,11 +11,17 @@
           <ul class="list-group">
             <li class="list-group-item"><b>Post Date:</b> <%= listing_date(job_listing) %></li>
             <li class="list-group-item"><b>Job Title:</b> <%= job_title(job_listing) %></li>
-            <% locations(job_listing).each do |location| %>
-              <li class="list-group-item"><b>Location:</b> <%= location %></li>
-            <% end %>
+              <% if !locations(job_listing).empty? %>
+            <li class="list-group-item">
+              <b>Locations: </b>
+                <% locations(job_listing).each do |location| %>
+                  [<%= location %>]
+                <% end %>
+              <% end %>
+            </li>
               <% if !levels(job_listing).empty? %>
             <li class="list-group-item">
+              <b>Levels: </b>
                 <% levels(job_listing).each do |level| %>
                   [<%= level %>]
                 <% end %>
