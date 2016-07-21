@@ -9,7 +9,6 @@ describe SearchController do
       expect(response).to render_template("index")
     end
 
-  # Concern method: reset_session
     it "resets the page number" do
       get :index
       expect(session[:page]).to be(0)
@@ -37,27 +36,6 @@ describe SearchController do
         expect(session[:page]).to be(1)
       end
     end
-
-# Concern method
-  describe "get_url" do
-    it "sets the session query" do
-    get :show
-      expect get_url({"companies"=>[""], "levels"=>["Internship"], "categories"=>["Account+Management"], "locations"=>[""], "controller"=>"search","action"=>"show"}).to change(session[:query], "&level=Internship&category=Account+Management")
-    end
-
-    it "sets the session url" do
-      get :show
-      expect get_url({"companies"=>[""], "levels"=>["Internship"], "categories"=>["Account+Management"], "locations"=>[""], "controller"=>"search", "action"=>"show"}).to change(session[:url], "https://api-v2.themuse.com/jobs?page=0&level=Internship&category=Account+Management")
-    end
-  end
-
-# Concern method
-  describe "get_api_results" do
-    it "returns results based off user search params" do
-    get :show
-      expect(get_api_results).to be_success
-    end
-  end
 
   end
 
