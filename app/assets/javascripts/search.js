@@ -16,7 +16,6 @@ $(document).ready(function(){
     }
     else {
       $(this).html('<span class="glyphicon glyphicon-chevron-up"></span> Less Info');
-      debugger;
       $(this).parent().parent().parent().find('.job-description').removeClass("hidden").addClass("active").show()
     }
   });
