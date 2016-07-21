@@ -8,7 +8,7 @@ module SearchSupporter
   end
 
   def get_url(params)
-    session[:url] = "https://api-v2.themuse.com/jobs?page=" + "#{session[:page]}"
+    session[:url] = "https://api-v2.themuse.com/jobs?page=" + "#{session[:page]}" + "#{session[:query]}"
     if session[:query] == ""
       if params[:companies] && params[:companies] != [""]
         companies = params[:companies].map! {|c| c.gsub(" ", "+")}.join("&company=")
