@@ -7,7 +7,18 @@ $(document).ready(function(){
     var id = "#" + this.id + "-list"
     $(id).show();
     $(id).addClass("active");
-  })
+  });
+  $('body').on("click", '.show-more', function(e){
+    e.preventDefault();
+    if ($(this).parent().parent().parent().find('.job-description').hasClass("active")){
+      $(this).text("Show More");
+      $(this).parent().parent().parent().find('.job-description').removeClass("active").hide();
+    }
+    else {
+      $(this).text("Hide");
+      $(this).parent().parent().parent().find('.job-description').removeClass("hidden").addClass("active").show()
+    }
+  });
   $('#form-div').on("submit", "form", function(e){
     e.preventDefault();
     var companies = $('#company-search-form').tokenfield('getTokensList').split(',');
@@ -24,9 +35,8 @@ $(document).ready(function(){
       method: 'POST',
       data: search_queries
     }).done(function(response){
-      $('body').replaceWith(response)
-    })
- })
-  })
-
+      $('.container').replaceWith(response)
+    });
+ });
+});
 
