@@ -2,13 +2,16 @@ class SearchController < ApplicationController
   include SearchSupporter
 
   def index
-    session.clear
-    session[:page] = 0
+    reset_session
   end
 
   def show
+    if params[:commit] == "Next"
+      session[:page] += 1
+    elsif params[:commit] == "Previous"
+      session[:page] -= 1
+    end
     results = get_api_results(get_url(params))
-    session[:page] += 1
     if request.xhr?
       render :show, layout: false, locals: {results: results}
     else

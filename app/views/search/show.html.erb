@@ -1,9 +1,10 @@
 <div class = "container">
   <div class= "col-md-12">
     <% if !results.empty? %>
-      <h1> Job Listings </h1>
+      <%= link_to "Back To Search", root_path %>
+      <h1>Job Listings </h1>
       <% results.each do |job_listing| %>
-        <section class="panel panel-default col-md-6">
+        <section class="panel panel-default col-md-6 row-eq-height">
           <header class="panel-heading">
             <h3><a href= <%= url_for_full_listing(job_listing) %>><%= company_name(job_listing) %></a></h3>
           </header>
@@ -20,13 +21,16 @@
                 <% end %>
               <% end %>
             </li>
-            <li class="list-group-item"><a class = "show-more" href= #>Show More</a></li>
+            <li class="list-group-item"><a class = "show-more" href= "#"><span class="show-more glyphicon glyphicon-chevron-down"></span> More Info</a></li>
           </ul>
           <div class="panel-body job-description hidden">
             <h5><%= job_description(job_listing) %></h5>
           </div>
         </section>
       <% end %>
+      <%= bootstrap_form_for :search, url: {action: "show", controller: "search"} do |f| %>
+          <%= f.submit "Previous", class:"previous-button btn btn-default" %>
+        <% end %>
       <%= bootstrap_form_for :search, url: {action: "show", controller: "search"} do |f| %>
           <%= f.submit "Next", class:"next-button btn btn-default" %>
         <% end %>

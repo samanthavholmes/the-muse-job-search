@@ -11,11 +11,12 @@ $(document).ready(function(){
   $('body').on("click", '.show-more', function(e){
     e.preventDefault();
     if ($(this).parent().parent().parent().find('.job-description').hasClass("active")){
-      $(this).text("Show More");
+      $(this).html('<span class="glyphicon glyphicon-chevron-down"></span> More Info');
       $(this).parent().parent().parent().find('.job-description').removeClass("active").hide();
     }
     else {
-      $(this).text("Hide");
+      $(this).html('<span class="glyphicon glyphicon-chevron-up"></span> Less Info');
+      debugger;
       $(this).parent().parent().parent().find('.job-description').removeClass("hidden").addClass("active").show()
     }
   });

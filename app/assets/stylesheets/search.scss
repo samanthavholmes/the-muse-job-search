@@ -77,3 +77,14 @@
   background-color: #3e8acd;
   color: white;
 }
+
+.row-eq-height {
+  height:300px;
+  overflow: scroll;
+}
+
+@media screen and (max-width: 480px) {
+  .row-eq-height {
+    min-height:340px;
+  }
+}
