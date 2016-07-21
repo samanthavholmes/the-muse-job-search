@@ -28,7 +28,7 @@ gem 'sprockets'
 gem 'jquery-ui-rails'
 gem 'bootstrap_form'
 gem 'bootstrap_tokenfield_rails'
-
+gem 'capybara'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
