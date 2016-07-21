@@ -1,5 +1,3 @@
-== README
-
 The Muse Job Search
 ==========
 
@@ -18,7 +16,6 @@ Technologies
 TO-DO
 -----
 
-- Finish testing
 - Allow user to visit any page number
 - Work on design
 - See if any code can be refactored
