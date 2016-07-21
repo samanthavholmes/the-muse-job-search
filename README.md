@@ -22,3 +22,4 @@ TO-DO
 - Allow user to visit any page number
 - Work on design
 - See if any code can be refactored
+- Deploy to Heroku/AWS
