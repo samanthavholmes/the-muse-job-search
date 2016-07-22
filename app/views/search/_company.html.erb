@@ -1,4 +1,6 @@
 <div class="options input-group col-md-4 search-form active" id="company-list">
+  <!-- Invisible div to access global variables for companies -->
+  <div class="company-list" data-companies="<%= $companies %>"></div>
   <input type="text" id= "company-search-form" class= "tokenize search-query form-control" placeholder="Company" />
 </div>
 
