@@ -9,9 +9,7 @@ def get_companies_from_api
     results.each do |company|
       companies << company["name"]
       location_results = get_locations_from_api(results)
-      location_results.each do |location|
-        locations << location unless locations.include?(location)
-      end
+      location_results.each {|location| locations << location unless locations.include?(location)}
     end
     results = JSON.parse(open("https://api-v2.themuse.com/companies?page=#{i}").read)["results"]
     i += 1
@@ -22,9 +20,7 @@ end
 def get_locations_from_api(results)
   locations = []
   results.each do |result|
-    result["locations"].each do |location|
-      locations << location["name"] unless locations.include?(location["name"])
-    end
+    result["locations"].each {|location| locations << location["name"] unless locations.include?(location["name"])}
   end
   return locations
 end
