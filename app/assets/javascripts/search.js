@@ -1,12 +1,10 @@
 $(document).ready(function(){
-  $('.active').hide();
   $('.search-option').on("click", function(e){
     e.preventDefault();
-    $('.active').hide();
-    $('.active').removeClass('active');
+    $('.active').removeClass('active').addClass('hidden');
     var id = "#" + this.id + "-list"
     $(id).show();
-    $(id).addClass("active");
+    $(id).removeClass('hidden').addClass("active");
   });
   $('body').on("click", '.show-more', function(e){
     e.preventDefault();
